@@ -434,7 +434,7 @@ if Controls then
   local hasInitVisibility = false
   local buffer = "" -- rx buffer
   local interfacesName, defaultName = {},{}
-  local polltimer = Timer.New()
+  polltimer = Timer.New()
   -- Create TcpSocket
   local sock = Properties["Connection Type"].Value == "TCP" and TcpSocket.New() or TcpSocket.NewTls() -- Tls({ VerifyPeer = false })
   print("Connection Tyep: "..Properties["Connection Type"].Value)
@@ -1094,7 +1094,7 @@ if Controls then
   ssh.ReconnectTimeout = 5
   ssh.IsInteractive = false -- Use Connect with credentials
   
-  local sshTimer = Timer.New() -- Inactivity timeout timer
+  sshTimer = Timer.New() -- Inactivity timeout timer
   local setTimeout = Controls["SSHTimeOut"].Value -- Configured timeout value (seconds)
   local timeoutCount = 0 -- Current countdown value (seconds)
   
